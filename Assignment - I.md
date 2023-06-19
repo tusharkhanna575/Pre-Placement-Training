@@ -43,10 +43,18 @@ Explanation: Your function should return k = 2, with the first two elements of n
 ```
 #### Code
 ```
-
+int removeElement(vector<int>& nums, int val) {
+    int j = 0;
+    for(int i = 0; i < nums.size(); i++){
+        if(nums[i] != val){
+            nums[j++] = nums[i];
+        }
+    }
+    return j;
+}
 ```
-- Time Complexity : $O()$
-- Space Complexity : $O()$
+- Time Complexity : $O(n)$
+- Space Complexity : $O(1)$
 
 -----
 ## Question - III
@@ -113,10 +121,23 @@ Explanation: The array represents the integer 123 Incrementing by one gives 123 
 ```
 #### Code
 ```
-
+vector<int> addOne(vector<int> &digits) {
+    for(int i=digits.size()-1;i>=0;i--) {
+        if(digits[i]<9) {
+            ++digits[i];
+            return digits;
+        }
+        else {
+            digits[i]=0;
+        }
+    }
+    digits.push_back(0);
+    digits[0]=1;
+    return digits;
+}
 ```
-- Time Complexity : $O()$
-- Space Complexity : $O()$
+- Time Complexity : $O(n)$
+- Space Complexity : $O(n)$
 ---
 ## Question - V
 ### You are given two integer arrays `nums1` and `nums2`, sorted in non-decreasing order, and two integers `m` and `n`, representing the number of elements in `nums1` and `nums2` respectively. Merge `nums1` and `nums2` into a single array sorted in non-decreasing order. The final sorted array should not be returned by the function, but instead be stored inside the array `nums1`. To accommodate this,
@@ -131,10 +152,32 @@ Explanation: The arrays we are merging are [1,2,3] and [2,5,6]. The result of th
 ```
 #### Code
 ```
-
+//using sorting
+void merge(vector<int> &nums1, int m, vector<int> &nums2, int n) {
+    for (int j = 0, i = m; j<n; j++){
+            nums1[i++] = nums2[j];
+        }
+    sort(nums1.begin(),nums1.end());
+}
 ```
-- Time Complexity : $O()$
-- Space Complexity : $O()$
+- Time Complexity : $O(n*logn)$
+- Space Complexity : $O(1)$
+```
+//using two pointer approach
+void merge(vector<int> &nums1, int m, vector<int> &nums2, int n) {
+    int i=m-1, j=n-1, k=m+n-1;
+    while(j>=0) {
+        if(i>=0 && nums1[i]>nums2[j]) {
+            nums1[k--]=nums1[i--];
+        }
+        else {
+            nums1[k--]=nums2[j--];
+        }
+    }
+}
+```
+- Time Complexity : $O(n)$
+- Space Complexity : $O(1)$
 ---
 
 ## Question - VI
