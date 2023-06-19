@@ -38,7 +38,7 @@ vector<int> targetSum(vector<int> &nums, int &n, int &target) {
 **Example :**
 ```
 Input: nums = [3,2,2,3], val = 3
-Output: 2, nums = [2,2,_*,_*]
+Output: 2, nums = [2,2,_,_]
 Explanation: Your function should return k = 2, with the first two elements of nums being 2. It does not matter what you leave beyond the returned k (hence they are underscores)
 ```
 #### Code
@@ -138,7 +138,7 @@ Explanation: The arrays we are merging are [1,2,3] and [2,5,6]. The result of th
 ---
 
 ## Question - VI
-### Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct. 
+### Given an integer array `nums`, return `true` if any value appears at least twice in the array, and return `false` if every element is distinct. 
 
 **Example 1:**
 ```
@@ -147,11 +147,81 @@ Output: true
 ```
 #### Code
 ```
-
+//using stl
+bool hasDuplicate(vector<int> &nums) {
+    set<int> s(nums.begin(),nums.end());
+    return((bool) (nums.size()==s.size()));
+}
 ```
-- Time Complexity : $O()$
-- Space Complexity : $O()$
+- Time Complexity : $O(n)$
+- Space Complexity : $O(n)$
+```
+//not using stl
+bool hasDuplicate(vector<int> &nums) {
+    sort(nums.begin(),nums.end());
+    for(int i=0;i<nums.size()-1;i++) {
+        if(nums[i]==nums[i+1]) {
+            return true;
+        }
+    }
+    return false;
+}
+```
+- Time Complexity : $O(n*logn)$
+- Space Complexity : $O(1)$
 ---
 
 ## Question - VII
-### 
+### Given an integer array `nums`, move all `0`'s to the end of it while maintaining the relative order of the nonzero elements. Note that you must do this in-place without making a copy of the array.
+
+**Example 1:**
+```
+Input: nums = [0,1,0,3,12]
+Output: [1,3,12,0,0]
+```
+#### Code
+```
+void moveZeros(vector<int> &nums) {
+    int k=0;
+    for(int i=0;i<nums.size();i++) {
+        if(nums[i]!=0) {
+            swap(nums[i],nums[k++]);
+        }
+    }
+}
+```
+- Time Complexity : $O(n)$
+- Space Complexity : $O(1)$
+---
+## Question - VIII
+### You have a set of integers `s`, which originally contains all the numbers from `1 to n`. Unfortunately, due to some error, one of the numbers in `s` got duplicated to another number in the set, which results in repetition of one number and loss of another number. You are given an integer array `nums` representing the data status of this set after the error. Find the number that occurs twice and the number that is missing and return them in the form of an array.
+
+**Example 1:**
+```
+Input: nums = [1,2,2,4]
+Output: [2,3]
+```
+#### Code
+```
+vector<int> find(vector<int> &nums) {
+    int dup=-1, miss=-1;
+    for(int i=1;i<=nums.size();i++) {
+        int count=0;
+        for(auto j: nums) {
+            if(i==j) {
+                ++count;
+            }
+        }
+        if(count==2) {
+            dup=i;
+        }
+        else if(count==0) {
+            miss=i;
+        }
+    }
+    vector<int> ans={dup,miss};
+    return ans;
+}
+```
+- Time Complexity : $O(n^2)$
+- Space Complexity : $O(1)$
