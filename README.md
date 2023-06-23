@@ -1,7 +1,7 @@
 # Pre Placement Training by **PW Skills**
 
 ## Schedule
----
+
 |Assignment Number|Topic (Link)|Due Date|
 |:---:|:---:|:---:|
 |I|[Arrays](https://github.com/tusharkhanna575/Pre-Placement-Training/blob/main/Assignment%20-%20I.md)|24 June 2023|
