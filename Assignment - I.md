@@ -69,7 +69,7 @@ Output: 2
 ```
 //using stl
 int search(vector<int> &nums, int &n, int &target) {
-    return(lower_bound(nums.begin(), nums.end(), target));
+    return(lower_bound(nums.begin(), nums.end(), target) - nums.begin());
 }
 ```
 ```
