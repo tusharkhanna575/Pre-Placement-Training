@@ -2,7 +2,7 @@
 # Topic - Arrays
 
 ## Question - I
-### Given an integer array nums of 2n integers, group these integers into n pairs (a1, b1), (a2, b2),..., (an, bn) such that the sum of min(ai, bi) for all i is maximized. Return the maximized sum.
+### Given an integer array nums of `2n` integers, group these integers into `n` pairs `(a1, b1), (a2, b2),..., (an, bn)` such that the sum of `min(ai, bi)` for all `i` is maximized. Return the `maximized sum`.
 
 ```
 Input: nums = [1,4,3,2]
@@ -54,7 +54,7 @@ int distributeCandies(vector<int>& candyType) {
 ---
 
 ## Question - III
-### We define a harmonious array as an array where the difference between its maximum value and its minimum value is exactly `1`. Given an integer array `nums`, return the length of its longest harmonious subsequence among all its possible subsequences. A subsequence of an array is a sequence that can be derived from the array by deleting some or no elements without changing the order of the remaining elements.
+### We define a `harmonious array` as an array where the difference between its `maximum` value and its `minimum` value is exactly `1`. Given an integer array `nums`, return the length of its longest harmonious subsequence among all its possible subsequences. A subsequence of an array is a sequence that can be derived from the array by deleting some or no elements without changing the order of the remaining elements.
 
 ```
 Input: nums = [1,3,2,2,5,2,3,7]
@@ -99,7 +99,7 @@ bool canPlaceFlowers(vector<int>& flowerbed, int n) {
 ---
 
 ## Question - V
-### Given an integer array nums, find three numbers whose product is maximum and return the maximum product.
+### Given an integer array `nums`, find `three numbers` whose `product` is `maximum` and return the `maximum product`.
 
 ```
 Input: nums = [1,2,3]
@@ -114,7 +114,7 @@ Output: 6
 ---
 
 ## Question - VI
-### Given an array of integers nums which is sorted in ascending order, and an integer target, write a function to search target in nums. If target exists, then return its index. Otherwise, return -1. You must write an algorithm with O(log n) runtime complexity.
+### Given an array of integers `nums` which is sorted in ascending order, and an integer target, write a function to search `target` in nums. If `target` exists, then return its `index`. Otherwise, return `-1`. You must write an algorithm with `O(log n)` runtime complexity.
 ```
 Input: nums = [-1,0,3,5,9,12], target = 9
 Output: 4
@@ -144,7 +144,7 @@ int search(vector<int> &nums, int &n, int &target) {
 ---
 
 ## Question - VII
-### An array is monotonic if it is either monotone increasing or monotone decreasing. An array nums is monotone increasing if for all i <= j, nums[i] <= nums[j]. An array nums is monotone decreasing if for all i <= j, nums[i] >= nums[j]. Given an integer array nums, return true if the given array is monotonic, or false otherwise.
+### An array is monotonic if it is either monotone increasing or monotone decreasing. An array `nums` is monotone increasing if for all `i <= j`, `nums[i] <= nums[j]`. An array nums is monotone decreasing if for all `i <= j`, `nums[i] >= nums[j]`. Given an integer array `nums`, return `true` if the given array is monotonic, or `false` otherwise.
 ```
 Input: nums = [1,2,2,3]
 Output: true
@@ -158,7 +158,7 @@ Output: true
 ---
 
 ## Question - VIII
-### You are given an integer array nums and an integer k. In one operation, you can choose any index i where 0 <= i < nums.length and change nums[i] to nums[i] + x where x is an integer from the range [-k, k]. You can apply this operation at most once for each index i. The score of nums is the difference between the maximum and minimum elements in nums. Return the minimum score of nums after applying the mentioned operation at most once for each index in it. 
+### You are given an integer array `nums` and an integer `k`. In one operation, you can choose any index `i` where `0 <= i < nums.length` and change `nums[i]` to `nums[i] + x` where `x` is an integer from the range `[-k, k]`. You can apply this operation at most once for each index `i`. The score of `nums` is the difference between the maximum and minimum elements in `nums`. Return the minimum score of `nums` after applying the mentioned operation at most once for each index in it. 
 ```
 Input: nums = [1], k = 0
 Output: 0
@@ -166,8 +166,17 @@ Explanation: The score is max(nums) - min(nums) = 1 - 1 = 0.
 ``` 
 #### Code
 ```
-
+int smallestRange(vector<int>& nums, int k) {
+    int n=nums.size();
+    if(n<2) {
+        return 0;
+    }
+    sort(nums.begin(),nums.end());
+    int low=nums[0]+k, high=nums[n-1]-k;
+    int res=max(0,high-low);
+    return res;
+}
 ```
-- Time Complexity : $O()$
-- Space Complexity : $O()$
+- Time Complexity : $O(n*logn)$
+- Space Complexity : $O(1)$
 ---
