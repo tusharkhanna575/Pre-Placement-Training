@@ -2,7 +2,7 @@
 
 ## Schedule
 
-|Assignment Number|Topic (Link)|Due Date|
+|Serial Number|Topic (Link)|Due Date|
 |:---:|:---:|:---:|
 |I|[Arrays](https://github.com/tusharkhanna575/Pre-Placement-Training/blob/main/Assignment%20-%20I.md)|24 June 2023|
 |II|[Arrays](https://github.com/tusharkhanna575/Pre-Placement-Training/blob/main/Assignment%20-%20II.md)|26 June 2023|
