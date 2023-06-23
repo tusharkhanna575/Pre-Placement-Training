@@ -1,6 +1,6 @@
 # Pre Placement Training by **PW Skills**
 
-## [Schedule 🔗](https://pwskills.notion.site/pwskills/Class-Timetable-PW-Skills-892af9fc6e994cc8a507da4ec1a83119)
+## [🔗 Schedule](https://pwskills.notion.site/pwskills/Class-Timetable-PW-Skills-892af9fc6e994cc8a507da4ec1a83119)
 
 |Serial Number|Topic (Link)|Due Date|
 |:---:|:---:|:---:|
