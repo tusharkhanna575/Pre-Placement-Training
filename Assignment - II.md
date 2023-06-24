@@ -64,9 +64,22 @@ Explanation: The longest harmonious subsequence is [3,2,2,2,3]
 
 #### Code
 ```
+int findLHS(vector<int>& nums) {
+    unordered_map<int, int> map;
+    int res = 0;
+    for (auto num: nums) {
+        ++map[num];
+    }
+    for (auto key: map) {
+        if (map.find(key.first+1) != map.end()) {
+            res = max(res, map[key.first] + map[key.first+1]);
+        }
+    }
+    return res;
+}
 ```
-- Time Complexity : $O()$
-- Space Complexity : $O()$
+- Time Complexity : $O(n)$
+- Space Complexity : $O(n)$
 ---
 
 ## Question - IV
@@ -107,10 +120,14 @@ Output: 6
 ```
 #### Code
 ```
-
+int maximumProduct(vector<int>& nums) {
+    sort(nums.begin(),nums.end());
+    int n=nums.size();
+    return(max(nums[0]*nums[1]*nums[n-1],nums[n-1]*nums[n-2]*nums[n-3]));
+}
 ```
-- Time Complexity : $O()$
-- Space Complexity : $O()$
+- Time Complexity : $O(n*logn)$
+- Space Complexity : $O(1)$
 ---
 
 ## Question - VI
