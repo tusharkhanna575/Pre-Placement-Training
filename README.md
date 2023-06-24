@@ -9,7 +9,7 @@
 |III|[Arrays](https://github.com/tusharkhanna575/Pre-Placement-Training/blob/main/Assignment%20-%20III.md)|28 June 2023|
 |IV|[2-D Arrays](https://github.com/tusharkhanna575/Pre-Placement-Training/blob/main/Assignment%20-%20IV.md)|29 June 2023|
 |V|[2-D Arrays](https://github.com/tusharkhanna575/Pre-Placement-Training/blob/main/Assignment%20-%20V.md)|30 June 2023|
-|VI|[Strings](https://github.com/tusharkhanna575/Pre-Placement-Training/blob/main/Assignment%20-%20VI.md)|1 July 2023|
+|VI|[Strings](https://github.com/tusharkhanna575/Pre-Placement-Training/blob/main/Assignment%20-%20VI.md)|01 July 2023|
 |VII|||
 |VIII|||
 |IX|||
